@@ -11,7 +11,7 @@ const Profile = () => {
   function logout(){
     localStorage.setItem('user',"")
     setTimeout(()=>{
-      window.location.href = 'https://sravaniputturu.github.io/profile';
+      window.location.href = '../profile';
     },5)
   }
   
