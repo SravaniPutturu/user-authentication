@@ -1,9 +1,12 @@
 
 
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 
 const Signup = () => {
+
+  var navigate = useNavigate()
 
   const generateAccessToken = () => {
 
@@ -49,12 +52,12 @@ const Signup = () => {
       setIsEmpty(empty)
     }
     if(user.password !== user.confirmpassword){
-      alert("Your password and confirrm password are not same please check")
+      alert("Your password and confirrm password are not same. please check.")
     }
     if(empty === 1){
       setTimeout(()=>{
-        window.location.href = 'https://sravaniputturu.github.io/profile';
-      },5)
+        navigate('/profile')
+      },2000)
     }
   }
 

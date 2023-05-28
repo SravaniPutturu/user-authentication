@@ -1,7 +1,9 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const Profile = () => {
 
+  const navigate = useNavigate()
   const userStr = localStorage.getItem('user')
   const user = JSON.parse(userStr)
   console.log(user)
@@ -11,8 +13,8 @@ const Profile = () => {
   function logout(){
     localStorage.setItem('user',"")
     setTimeout(()=>{
-      window.location.href = '../profile';
-    },5)
+      navigate('/')
+    },2000)
   }
   
   return (
